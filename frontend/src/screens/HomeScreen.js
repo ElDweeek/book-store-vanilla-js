@@ -339,7 +339,7 @@ arBookSliderChildrens.slice(0, boxPerView).forEach(box => {
 });
 
 const engInfiniteScroll = () => {
-  if(Math.ceil(engBookSlider.scrollLeft) === 0) {
+  if(engBookSlider.scrollLeft === 12) {
     engBookSlider.classList.add("no-transition");
     engBookSlider.scrollLeft = engBookSlider.scrollWidth - (2 * engBookSlider.offsetWidth);
     engBookSlider.classList.remove("no-transition");
@@ -353,7 +353,7 @@ const engInfiniteScroll = () => {
   if(!engBookSlider.matches(":hover")) engAutoPlay();
 }
 const arInfiniteScroll = () => {
-  if(Math.ceil(arBookSlider.scrollLeft) === 0) {
+  if(arBookSlider.scrollLeft === 12) {
     arBookSlider.classList.add("no-transition");
     arBookSlider.scrollLeft = arBookSlider.scrollWidth - (2 * arBookSlider.offsetWidth);
     arBookSlider.classList.remove("no-transition");
@@ -366,7 +366,6 @@ const arInfiniteScroll = () => {
   clearTimeout(arTimeOutId);
   if(!arBookSlider.matches(":hover")) arAutoPlay();
 }
-
 
 const engAutoPlay = () => {
   if(window.innerWidth < 800) return;
