@@ -61,7 +61,7 @@ const data = {
   engProducts: [
     {
       _id: '1',
-      name: 'ahmed',
+      name: 'a',
       image: './imgs/Books/eng1.jpg',
       price: 11.75,
       numReview: 543,
@@ -71,7 +71,7 @@ const data = {
     },
     {
       _id: '2',
-      name: 'ahmed',
+      name: 'b',
       image: './imgs/Books/eng1.jpg',
       price: 8.75,
       numReview: 543,
@@ -81,7 +81,7 @@ const data = {
     },
     {
       _id: '3',
-      name: 'ahmed',
+      name: 'c',
       image: './imgs/Books/eng1.jpg',
       price: 8.75,
       numReview: 543,
@@ -91,7 +91,7 @@ const data = {
     },
     {
       _id: '4',
-      name: 'ahmed',
+      name: 'd',
       image: './imgs/Books/eng1.jpg',
       price: 7.75,
       numReview: 543,
@@ -101,7 +101,7 @@ const data = {
     },
     {
       _id: '5',
-      name: 'ahmed',
+      name: 'e',
       image: './imgs/Books/eng1.jpg',
       price: 5.75,
       numReview: 543,
@@ -111,7 +111,7 @@ const data = {
     },
     {
       _id: '6',
-      name: 'ahmed',
+      name: 'f',
       image: './imgs/Books/eng1.jpg',
       price: 6.75,
       numReview: 543,
@@ -121,7 +121,7 @@ const data = {
     },
     {
       _id: '7',
-      name: 'ahmed',
+      name: 'g',
       image: './imgs/Books/eng1.jpg',
       price: 10.75,
       numReview: 543,
@@ -131,7 +131,7 @@ const data = {
     },
     {
       _id: '8',
-      name: 'ahmed',
+      name: 'h',
       image: './imgs/Books/eng1.jpg',
       price: 3.75,
       numReview: 543,
@@ -141,7 +141,7 @@ const data = {
     },
     {
       _id: '9',
-      name: 'ahmed',
+      name: 'i',
       image: './imgs/Books/eng1.jpg',
       price: 5.75,
       numReview: 543,
@@ -151,7 +151,7 @@ const data = {
     },
     {
       _id: '10',
-      name: 'ahmed',
+      name: 'j',
       image: './imgs/Books/eng1.jpg',
       price: 8,
       numReview: 543,
@@ -164,7 +164,7 @@ const data = {
   arProducts: [
     {
       _id: '01',
-      name: 'ahmed',
+      name: 'a',
       image: './imgs/Books/ar1.png',
       price: 11.75,
       numReview: 543,
@@ -174,7 +174,7 @@ const data = {
     },
     {
       _id: '02',
-      name: 'ahmed',
+      name: 'b',
       image: './imgs/Books/ar1.png',
       price: 8.75,
       numReview: 543,
@@ -184,7 +184,7 @@ const data = {
     },
     {
       _id: '03',
-      name: 'ahmed',
+      name: 'c',
       image: './imgs/Books/ar1.png',
       price: 8.75,
       numReview: 543,
@@ -194,7 +194,7 @@ const data = {
     },
     {
       _id: '04',
-      name: 'ahmed',
+      name: 'd',
       image: './imgs/Books/ar1.png',
       price: 7.75,
       numReview: 543,
@@ -204,7 +204,7 @@ const data = {
     },
     {
       _id: '05',
-      name: 'ahmed',
+      name: 'e',
       image: './imgs/Books/ar1.png',
       price: 5.75,
       numReview: 543,
@@ -214,7 +214,7 @@ const data = {
     },
     {
       _id: '06',
-      name: 'ahmed',
+      name: 'f',
       image: './imgs/Books/ar1.png',
       price: 6.75,
       numReview: 543,
@@ -224,7 +224,7 @@ const data = {
     },
     {
       _id: '07',
-      name: 'ahmed',
+      name: 'g',
       image: './imgs/Books/ar1.png',
       price: 10.75,
       numReview: 543,
@@ -234,7 +234,7 @@ const data = {
     },
     {
       _id: '08',
-      name: 'ahmed',
+      name: 'h',
       image: './imgs/Books/ar1.png',
       price: 3.75,
       numReview: 543,
@@ -244,7 +244,7 @@ const data = {
     },
     {
       _id: '09',
-      name: 'ahmed',
+      name: 'i',
       image: './imgs/Books/ar1.png',
       price: 5.75,
       numReview: 543,
@@ -254,7 +254,7 @@ const data = {
     },
     {
       _id: '010',
-      name: 'ahmed',
+      name: 'j',
       image: './imgs/Books/ar1.png',
       price: 8,
       numReview: 543,

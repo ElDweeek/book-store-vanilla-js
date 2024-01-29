@@ -18,7 +18,7 @@ const SignInScreen = {
             <h1>Login</h1>
           </li>
           <li>
-            <input type="email" name="email" id="email" placeholder="E-mail" />
+            <input type="email" name="email" id="email" placeholder="E-mail" autocomplete="off" />
           </li>
           <li>
             <input type="password" name="password" id="password" placeholder="Password" />

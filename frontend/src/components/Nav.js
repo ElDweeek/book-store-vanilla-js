@@ -6,7 +6,6 @@ const Nav = {
 
     const activePage = window.location.hash;
 
-    console.log(activePage);
     
     const navLinks = document.querySelectorAll('.navbar-nav a');
     
@@ -58,7 +57,7 @@ const Nav = {
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-          <li><input class="search d-block d-lg-none" type="text" placeholder="Search...."></li>
+          <li><input class="search d-block d-lg-none" type="text" id ="mob-search" placeholder="Search...."></li>
           <li class="nav-item">
             <a class="nav-link p-2 p-lg-3" aria-current="page" href="/#/">Home</a>
           </li>
@@ -77,7 +76,7 @@ const Nav = {
         </ul>
         <div class="search-icon-div ps-3 pe-3 d-none d-lg-block">
           <span class="fa-brands fa-searchengin search-icon"></span>
-          <input class="searchArea" type="text" placeholder="Author / Book" autofocus>
+          <input class="searchArea" type="text" id ="desk-search" placeholder="Author / Book" autofocus>
         </div>
         
         ${fName ?

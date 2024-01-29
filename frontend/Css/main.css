@@ -14,6 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  user-select: none;
 }
 
 #main-section {
@@ -669,7 +670,7 @@ nav .container .shop-cart svg {
     background: linear-gradient(to left top, var(--Tan), var(--Beige), var(--Tan));
     overflow-x: auto;
     height: 350px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.16), 6px 6px 6px rgba(0, 0, 0, 0.23);
     cursor: pointer;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -683,13 +684,21 @@ nav .container .shop-cart svg {
     }
   }
 
+  .engSlider.no-transition,
+  .arSlider.no-transition{
+    scroll-behavior: auto;
+  }
   .engSlider .box,
   .arSlider .box {
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     border-radius: 8px;
     height: 320px;
     background: var(--Tan);
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16), 3px 3px 6px rgba(0, 0, 0, 0.23);
+    &:hover {
+      transform: scale(1.05);
+      transition: 0.5s;
+    }
   }
 
   & ul li {
@@ -737,13 +746,14 @@ nav .container .shop-cart svg {
   }
 
   & p {
-    margin-left: 20%;
+    width: fit-content;
+    margin: 0 auto;
     font-weight: bold;
     text-transform: capitalize;
-
     & span {
-      margin-left: 25%;
+      padding-left: 10px;
     }
+
   }
 
   .engSlider.dragging .box,

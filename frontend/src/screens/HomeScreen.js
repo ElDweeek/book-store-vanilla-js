@@ -305,6 +305,10 @@ function removeAllActive() {
 const engBookSlider = document.querySelector(".engSlider");
 const arBookSlider = document.querySelector(".arSlider");
 
+
+
+let isDragging = false, startX, startScrollLeft, engTimeOutId ,arTimeOutId;
+
 // btns -----------
 const leftEngBtn = document.getElementById("engLeft");
 const RightEngBtn = document.getElementById("engRight");
@@ -313,21 +317,70 @@ const rightArBtn = document.getElementById("arRight");
 
 const firstCartWidth = engBookSlider.querySelector(".box").offsetWidth;
 
-leftEngBtn.addEventListener("click", ()=> {
-  engBookSlider.scrollLeft += leftEngBtn ? (-firstCartWidth) : null
-})
-RightEngBtn.addEventListener("click", ()=> {
-  engBookSlider.scrollLeft += RightEngBtn ? firstCartWidth : null
-})
-leftArBtn.addEventListener("click", ()=> {
-  arBookSlider.scrollLeft += leftArBtn ? -firstCartWidth : null
-})
-rightArBtn.addEventListener("click", ()=> {
-  arBookSlider.scrollLeft += rightArBtn ? firstCartWidth : null
-})
+// infinite && autoplay -------------
+const engBookSliderChildrens = [...engBookSlider.children];
+const arBookSliderChildrens = [...arBookSlider.children];
 
-// Slidding --------------
-let isDragging = false, startX, startScrollLeft;
+let boxPerView = Math.round(engBookSlider.offsetWidth / firstCartWidth )
+
+engBookSliderChildrens.slice(-boxPerView).reverse().forEach(box => {
+  engBookSlider.insertAdjacentHTML("afterbegin" , box.outerHTML);
+});
+engBookSliderChildrens.slice(0, boxPerView).forEach(box => {
+  engBookSlider.insertAdjacentHTML("beforeend" , box.outerHTML);
+});
+
+
+arBookSliderChildrens.slice(-boxPerView).reverse().forEach(box => {
+  arBookSlider.insertAdjacentHTML("afterbegin" , box.outerHTML);
+});
+arBookSliderChildrens.slice(0, boxPerView).forEach(box => {
+  arBookSlider.insertAdjacentHTML("beforeend" , box.outerHTML);
+});
+
+const engInfiniteScroll = () => {
+  if(Math.ceil(engBookSlider.scrollLeft) === 0) {
+    engBookSlider.classList.add("no-transition");
+    engBookSlider.scrollLeft = engBookSlider.scrollWidth - (2 * engBookSlider.offsetWidth);
+    engBookSlider.classList.remove("no-transition");
+  } 
+  else if (Math.ceil(engBookSlider.scrollLeft) === engBookSlider.scrollWidth - engBookSlider.offsetWidth) {
+    engBookSlider.classList.add("no-transition");
+    engBookSlider.scrollLeft = engBookSlider.offsetWidth;
+    engBookSlider.classList.remove("no-transition");
+  }
+  clearTimeout(engTimeOutId);
+  if(!engBookSlider.matches(":hover")) engAutoPlay();
+}
+const arInfiniteScroll = () => {
+  if(Math.ceil(arBookSlider.scrollLeft) === 0) {
+    arBookSlider.classList.add("no-transition");
+    arBookSlider.scrollLeft = arBookSlider.scrollWidth - (2 * arBookSlider.offsetWidth);
+    arBookSlider.classList.remove("no-transition");
+  } 
+  else if (Math.ceil(arBookSlider.scrollLeft) === arBookSlider.scrollWidth - arBookSlider.offsetWidth) {
+    arBookSlider.classList.add("no-transition");
+    arBookSlider.scrollLeft = arBookSlider.offsetWidth;
+    arBookSlider.classList.remove("no-transition");
+  }
+  clearTimeout(arTimeOutId);
+  if(!arBookSlider.matches(":hover")) arAutoPlay();
+}
+
+
+const engAutoPlay = () => {
+  if(window.innerWidth < 800) return;
+  engTimeOutId = setTimeout(() => engBookSlider.scrollLeft += firstCartWidth , 2500)
+}
+engAutoPlay();
+
+const arAutoPlay = () => {
+  if(window.innerWidth < 800) return;
+  arTimeOutId = setTimeout(() => arBookSlider.scrollLeft += firstCartWidth , 2500)
+}
+arAutoPlay();
+
+// Dragging --------------
 
 const engDragStart = (e) => {
   isDragging = true;
@@ -363,6 +416,8 @@ const arDragStop = () => {
   arBookSlider.classList.remove("dragging")
 }
 
+
+// addEventListener for Sliding-----------
 engBookSlider.addEventListener("mousedown", engDragStart);
 engBookSlider.addEventListener("mousemove", engDragging);
 document.addEventListener("mouseup", engDragStop);
@@ -370,6 +425,28 @@ arBookSlider.addEventListener("mousedown", arDragStart);
 arBookSlider.addEventListener("mousemove", arDragging);
 document.addEventListener("mouseup", arDragStop);
 
+
+// addEventListener for btns-----------
+leftEngBtn.addEventListener("click", ()=> {
+  engBookSlider.scrollLeft += leftEngBtn ? (-firstCartWidth) : null
+})
+RightEngBtn.addEventListener("click", ()=> {
+  engBookSlider.scrollLeft += RightEngBtn ? firstCartWidth : null
+})
+leftArBtn.addEventListener("click", ()=> {
+  arBookSlider.scrollLeft += leftArBtn ? -firstCartWidth : null
+})
+rightArBtn.addEventListener("click", ()=> {
+  arBookSlider.scrollLeft += rightArBtn ? firstCartWidth : null
+})
+
+// addEventListener for infiniteLoop && autoPlay-----------
+engBookSlider.addEventListener("scroll", engInfiniteScroll)
+engBookSlider.addEventListener("mouseenter", () => clearTimeout(engTimeOutId))
+engBookSlider.addEventListener("mouseleave", engAutoPlay)
+arBookSlider.addEventListener("scroll", arInfiniteScroll)
+arBookSlider.addEventListener("mouseenter", () => clearTimeout(arTimeOutId))
+arBookSlider.addEventListener("mouseleave", arAutoPlay)
 
   },
 };
