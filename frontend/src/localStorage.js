@@ -14,6 +14,8 @@ export const setCartItems = (cartItems) => {
     _id = '',
     fName = '',
     lName = '',
+    date = '',
+    phoneNumber= '',
     email = '',
     passowrd = '',
     token = '',
@@ -22,7 +24,7 @@ export const setCartItems = (cartItems) => {
     localStorage.setItem(
       'userInfo',
       JSON.stringify({
-        _id, fName, lName, email, passowrd, token, isAdmin
+        _id, fName, lName, email, date, phoneNumber, passowrd, token, isAdmin
       })
     )
   }
@@ -30,5 +32,5 @@ export const setCartItems = (cartItems) => {
   export const getUserInfo = () => {
     return localStorage.getItem('userInfo')?
     JSON.parse(localStorage.getItem('userInfo'))
-    : {fName: '', lName: '', email: '', passowrd: ''}
+    : {fName: '', lName: '', date: '', phoneNumber:'', email: '', passowrd: ''}
   }

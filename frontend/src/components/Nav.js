@@ -31,14 +31,16 @@ const Nav = {
     
     
     const profileSelect = document.getElementById("dropdown");
+    
+    if(profileSelect) {
     document.addEventListener("click", (e)=> {
-      if (e.target == profileSelect ){
+      if (e.target === profileSelect ){
         profileSelect.classList.add("active");
         } else {
           profileSelect.classList.remove("active");
         }
       })
-
+    }
   },
 
   render: () => {

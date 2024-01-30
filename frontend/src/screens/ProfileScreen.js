@@ -1,9 +1,13 @@
-import { register } from "../api";
+import { personalUpdate } from "../api";
 import { getUserInfo, setUserInfo } from "../localStorage";
 import { hideLoading, showLoading, showMessage } from "../utils";
 
 const ProfileScreen = {
   render: () => {
+    const {fName,lName, email, date, phoneNumber} = getUserInfo();
+    if (!fName) {
+    document.location.hash = '/';
+    }
     return `
 
 
@@ -50,14 +54,14 @@ const ProfileScreen = {
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda officia id esse? Ratione aliquam quas eveniet.</p>
                     <ul class="form-items">
                       <li>
-                        <input type="text" name="name" id="fName" placeholder="First Name" autocomplete="off" />
-                        <input type="text" name="name" id="lName" placeholder="Last Name" autocomplete="off"/>
+                        <input type="text" name="name" id="fName" placeholder="First Name" autocomplete="off" value="${fName}"/>
+                        <input type="text" name="name" id="lName" placeholder="Last Name" autocomplete="off" value="${lName}"/>
                       </li>
                       <li>
-                        <input type="date" name="date" id="date"/>
+                        <input type="date" name="date" id="date" value="${date}"/>
                       </li>
                       <li>
-                      <input type="tel" id="phone" name="phone" placeholder="8888-888-8888" autocomplete="off"  maxlength="13" title="Ten digits required" />
+                      <input type="tel" id="phone" name="phone" placeholder="8888-888-8888" autocomplete="off"  maxlength="13" title="Ten digits required" value="${phoneNumber}"/>
                       </li>
                       <li>
                       <button type="submit" class="sub-btn">Save</button>
@@ -72,8 +76,8 @@ const ProfileScreen = {
                   <div class="flex-container">
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda officia id esse? Ratione aliquam quas eveniet.</p>
                     <ul class="form-items">
-                      <li>
-                        <input type="email" name="email" id="email" placeholder="email@example.com" autocomplete="off"/>
+                      <li id="email-li">
+                        <input type="email" name="email" id="email" placeholder="email@example.com" autocomplete="off" value="${email}"/>
                       </li>
                       <li>
                         <button type="submit" class="sub-btn">Save</button>
@@ -181,14 +185,12 @@ const ProfileScreen = {
         e.value = e.value.replace(/(\d{4}) (\d{3})(\d{0,4})/, "$1 $2 $3");
     }
 }
-
-
-
-
 // Add event listener to call phoneSpaces on input change
 document.getElementById('phone').addEventListener('input', function() {
     phoneSpaces(this);
 });
+
+
 
 
     document
@@ -196,11 +198,12 @@ document.getElementById('phone').addEventListener('input', function() {
       .addEventListener("submit", async (e) => {
         e.preventDefault();
         showLoading();
-        const data = await register({
+        const data = await personalUpdate({
           fName: document.getElementById("fName").value,
           lName: document.getElementById("lName").value,
+          date: document.getElementById("date").value,
+          phoneNumber: document.getElementById("phone").value,
           email: document.getElementById("email").value,
-          password: document.getElementById("password").value,
         });
         hideLoading();
         if (data.error) {

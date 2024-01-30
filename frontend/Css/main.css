@@ -697,7 +697,7 @@ nav .container .shop-cart svg {
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16), 3px 3px 6px rgba(0, 0, 0, 0.23);
     &:hover {
       transform: scale(1.05);
-      transition: 0.5s;
+      transition: 0.3s;
     }
   }
 
@@ -1657,7 +1657,7 @@ h3 {
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
   .profile-screen .view-list {
     min-height: 900px;
   }
@@ -1670,6 +1670,10 @@ h3 {
 
   .section-details .flex-container {
     flex-direction: column;
+    & .form-items li:not(#email-li):first-child {
+      width: 70%;
+  }
+  
   }
 }
 
