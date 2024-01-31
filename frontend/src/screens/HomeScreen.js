@@ -123,8 +123,8 @@ const HomeScreen = {
               <h5>${engProducts.name}</h5>
             </a>
             <div class="book-rating">
-            <span>${Rating.render({ value: engProducts.rating, text: engProducts.numReview + " reviews" })}</span>
-            <span></span>
+            <span>${Rating.render({ value: engProducts.rating })}</span>
+            <span>${engProducts.numReview + " reviews"}</span>
             </div>
             <p>Price:<span>$ ${engProducts.price}</span> </p>
           </div>
@@ -154,8 +154,8 @@ const HomeScreen = {
               <h5>${arProducts.name}</h5>
             </a>
             <div class="book-rating">
-            <span>${Rating.render({ value: arProducts.rating, text: arProducts.numReview + " reviews" })}</span>
-            <span></span>
+            <span>${Rating.render({ value: arProducts.rating})}</span>
+            <span>${arProducts.numReview + " reviews"}</span>
             </div>
             <p>Price:<span>$ ${arProducts.price}</span> </p>
           </div>
@@ -368,13 +368,13 @@ const arInfiniteScroll = () => {
 }
 
 const engAutoPlay = () => {
-  if(window.innerWidth < 800) return;
+  if(window.innerWidth < 300) return;
   engTimeOutId = setTimeout(() => engBookSlider.scrollLeft += firstCartWidth , 2500)
 }
 engAutoPlay();
 
 const arAutoPlay = () => {
-  if(window.innerWidth < 800) return;
+  if(window.innerWidth < 300) return;
   arTimeOutId = setTimeout(() => arBookSlider.scrollLeft += firstCartWidth , 2500)
 }
 arAutoPlay();

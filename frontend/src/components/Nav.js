@@ -1,50 +1,59 @@
-import { getUserInfo } from "../localStorage";
+import { clearUser, getUserInfo } from "../localStorage";
 
 const Nav = {
-  after_render: () => {  
+  after_render: () => {
     // Nav Section -----------------------------------------------------------------------------------
 
     const activePage = window.location.hash;
 
-    
+
     const navLinks = document.querySelectorAll('.navbar-nav a');
-    
+
     navLinks.forEach(link => {
-      if(link.href.includes(`${activePage}`)){
+      if (link.href.includes(`${activePage}`)) {
         link.classList.add('active');
       }
     });
-    
-    
-    
-    
+
+
+
+
 
     const searchArea = document.querySelector(".searchArea");
 
     const searchNav = document.querySelector(".search-icon-div");
-    
+
     document.addEventListener("click", function (e) {
       if (e.target == searchNav || e.target == searchArea)
         searchNav.classList.add("active")
       else searchNav.classList.remove("active")
     });
-    
-    
+
+
     const profileSelect = document.getElementById("dropdown");
-    
-    if(profileSelect) {
-    document.addEventListener("click", (e)=> {
-      if (e.target === profileSelect ){
-        profileSelect.classList.add("active");
+
+    if (profileSelect) {
+      document.addEventListener("click", (e) => {
+        if (e.target === profileSelect) {
+          profileSelect.classList.add("active");
         } else {
           profileSelect.classList.remove("active");
         }
       })
     }
+
+    const logOut = document.getElementById("logout-option")
+    if (logOut) {
+      logOut.addEventListener("click", () => {
+        clearUser();
+        document.location.hash = '/#/'
+      })
+    }
+
   },
 
   render: () => {
-    const {fName} = getUserInfo();
+    const { fName } = getUserInfo();
     return `
     <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
@@ -82,7 +91,7 @@ const Nav = {
         </div>
         
         ${fName ?
-          `
+        `
           <div class="dropdown" id="dropdown">
             ${fName}
             <div class="profile-menu">
@@ -93,14 +102,14 @@ const Nav = {
                 Profile Settings</a>
               </div>
               <div class="logout option">
-                <a href="/#/">
+                <a href="/#/" id="logout-option">
                 <img src="../../imgs/logout.png" alt="">
                 Log out</a>
               </div>
             </div>
           </div>
-          ` 
-          : `<a class="btn main-btn ps-4 pe-4" href="#/signin">Login</a>`}
+          `
+        : `<a class="btn main-btn ps-4 pe-4" href="#/signin">Login</a>`}
       </div>
   <div class="shop-cart"><a href="/#/cart"><i class="fa-solid fa-cart-shopping"></i></a></div>
     </div>

@@ -153,19 +153,16 @@ const ProfileScreen = {
 
     } else if (e.target == myAddresslink) {
       removeAllActive()
-
       myAddresslink.classList.add('active'),
       myAddresscontent.classList.add('active')
     }
     else if (e.target == myOderslink) {
       removeAllActive()
-
       myOderslink.classList.add('active'),
       myOrderscontent.classList.add('active')
     }
     else if (e.target == accountSettingslink) {
       removeAllActive()
-
       accountSettingslink.classList.add('active'),
       accountSettingscontent.classList.add('active')
     }
