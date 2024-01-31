@@ -1,12 +1,16 @@
 import { register } from "../api";
 import { getUserInfo, setUserInfo } from "../localStorage";
-import { hideLoading, showLoading, showMessage } from "../utils";
+import { hideLoading, redirectUser, showLoading, showMessage } from "../utils";
 
 const RegisterScreen = {
+
   render: () => {
+    if (getUserInfo().fName) {
+      redirectUser();
+    }
     return `
 
-
+<div class="registerScreen">
   <div class="form-container">
     <div class="form-box">
       <form id="register-form" class="register-form">
@@ -40,7 +44,7 @@ const RegisterScreen = {
       </form>
     </div>
   </div>
-
+</div>
 
 
     `
@@ -61,7 +65,7 @@ const RegisterScreen = {
         showMessage(data.error);
       }else {
         setUserInfo(data);
-        document.location.hash = "/"
+        redirectUser();
       }
     });
   }

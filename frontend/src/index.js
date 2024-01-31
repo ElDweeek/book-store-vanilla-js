@@ -12,6 +12,8 @@ import ProfileScreen from "./screens/ProfileScreen.js";
 import RegisterScreen from "./screens/RegisterScreen.js";
 import SignInScreen from "./screens/SingInScreen.js";
 import { hideLoading, parseRequestUrl, showLoading } from "./utils.js";
+import ShippingScreen from "./screens/ShippingScreen.js";
+import PaymentScreen from "./screens/PaymentScreen.js";
 
 
 const routes = {
@@ -26,6 +28,8 @@ const routes = {
   '/about': AboutScreen,
   '/contact': ContactScreen,
   '/profile': ProfileScreen,
+  '/shipping': ShippingScreen,
+  '/payment': PaymentScreen,
 };
 
 

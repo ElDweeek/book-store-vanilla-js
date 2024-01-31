@@ -169,7 +169,6 @@ body {
 /* Start Nav */
 nav {
   background-color: var(--Black-brown);
-
   & .nav-logo img {
     width: 270px;
   }
@@ -306,6 +305,17 @@ nav {
     margin-inline-start: auto;
   }
 }
+nav .container .shop-cart svg {
+  font-size: 30px;
+  color: rgb(186, 27, 27);
+  position: absolute;
+  top: 150%;
+  right: 3%;
+
+  &:hover {
+    color: rgb(133, 28, 28);
+  }
+}
 
 
 @media (max-width: 992px) {
@@ -321,8 +331,8 @@ nav {
 /* Start Landing */
 .landing {
   position: relative;
-  height: calc(100vh - 80.5px);
-  /*80.5px is the height of Nav*/
+  height: calc(100vh - 91px);
+  /*91px is the height of Nav*/
   background-color: var(--Beige);
 
   & h3 {
@@ -367,17 +377,7 @@ nav {
   }
 }
 
-nav .container .shop-cart svg {
-  font-size: 30px;
-  color: rgb(186, 27, 27);
-  position: absolute;
-  top: 150%;
-  right: 3%;
 
-  &:hover {
-    color: rgb(133, 28, 28);
-  }
-}
 
 /* End Landing */
 
@@ -1263,10 +1263,15 @@ h3 {
 /********Start SignInScreen && RegisterScreen ****** Start SignInScreen && RegisterScreen ***********/
 
 /* ----------------Singin Section ----------*/
-
+.signinScreen,
+.regsiterScreen,
+.shippingScreen,
+.paymentScreen {
+  background-color: var(--Beige);
+  padding: var(--section-padding) 0;
+}
 .form-container {
   flex: 1;
-  background-color: var(--Beige);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1678,3 +1683,187 @@ h3 {
 }
 
 /******* End ProfileScreen ******End ProfileScreen*******End ProfileScreen*******/
+
+
+
+/******* Start ShippingScreen ******Start ShippingScreen*******Start ShippingScreen*******/
+.ShippingScreen {
+  background-color: var(--Beige);
+  padding: var(--section-padding) 0;
+}
+.form-box .shipping-form {
+  width: 480px;
+  padding: 30px 70px;
+  display: flex;
+  align-items: center;
+  border-radius: 10%;
+  border: 2px solid var(--Black-brown);
+  box-shadow: 20px 20px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+  & ul {
+    width: 340px;
+    padding: 0;
+    margin: 0;
+
+    & li {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      &:first-child h1 {
+        font-size: 50px;
+        text-align: center;
+      }
+      &:last-child {
+        margin: 50px auto 0;
+      }
+      & input {
+        color: white;
+        background-color: var(--Black-brown);
+        padding: 8px 10px;
+        font-size: 1.1rem;
+        border: 0;
+        border-radius: 4px;
+
+        &::placeholder {
+          color: white;
+          opacity: .4;
+        }
+      }
+
+        & button.sub-btn {
+          position: relative;
+          font-size: 1.3rem;
+          background-color: var(--Black-brown);
+          color: white;
+          padding: 10px 0;
+          border: 0;
+          border-radius: 8px;
+          width: 50%;
+          margin: 0 auto;
+          & svg {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-40%);
+          }
+          &:hover {
+            background-color: rgb(89, 25, 25);
+          }
+        }
+      }
+    }
+  }
+
+@media (max-width: 767px) {
+  .form-box .shipping-form {
+    width: 380px;
+    padding: 30px 30px;
+  }
+}
+
+/******* End ShippingScreen ******End ShippingScreen*******End ShippingScreen*******/
+/******* Start PaymentScreen ******Start PaymentScreen*******Start PaymentScreen*******/
+
+.form-box .payment-form {
+  height: 482.75px;
+  width: 480px;
+  padding: 30px 70px;
+  display: flex;
+  align-items: center;
+  border-radius: 10%;
+  border: 2px solid var(--Black-brown);
+  box-shadow: 20px 20px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+  & ul {
+    width: 340px;
+    padding: 0;
+    margin: 0;
+
+    & li {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 30px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      &:first-child h1 {
+        font-size: 50px;
+        text-align: center;
+      }
+      &:last-child {
+        margin: 100px auto 0;
+      }
+      & input {
+        color: white;
+        background-color: var(--Black-brown);
+        padding: 8px 10px;
+        font-size: 1.1rem;
+        border: 0;
+        border-radius: 4px;
+
+        &::placeholder {
+          color: white;
+          opacity: .4;
+        }
+      }
+        & label {
+          cursor: pointer;
+        }
+        & button.sub-btn {
+          position: relative;
+          font-size: 1.3rem;
+          background-color: var(--Black-brown);
+          color: white;
+          padding: 10px 0;
+          border: 0;
+          border-radius: 8px;
+          width: 50%;
+          margin: 0 auto;
+          & svg {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-40%);
+          }
+          &:hover {
+            background-color: rgb(89, 25, 25);
+          }
+        }
+      }
+    }
+  }
+
+@media (max-width: 767px) {
+  .form-box .payment-form {
+    width: 380px;
+    padding: 30px 30px;
+  }
+}
+/******* End PaymentScreen ******End PaymentScreen*******End PaymentScreen*******/
+
+/* CheckoutSteps */
+.checkout-steps {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 1rem auto;
+  &>div {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    border-top: .3rem solid ;
+    color: var(--Black-brown);
+    opacity: .7;
+    flex: 1 1;
+    padding-top: 1rem;
+  }
+  & .active {
+    color: rgb(186, 27, 27);
+    transition: 1s;
+    opacity: 1;
+  }
+}

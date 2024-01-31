@@ -1,15 +1,15 @@
 import { signin } from "../api";
 import { getUserInfo, setUserInfo } from "../localStorage";
-import { hideLoading, showLoading, showMessage } from "../utils";
+import { hideLoading, redirectUser, showLoading, showMessage } from "../utils";
 
 const SignInScreen = {
   render: () => {
-    if(getUserInfo().name) {
-      document.location.hash = '/';
+    if (getUserInfo().fName) {
+      redirectUser();
     }
     return `
 
-
+<div class="signinScreen">
   <div class="form-container">
     <div class="form-box">
       <form id="signin-form" class="signin-form">
@@ -36,11 +36,11 @@ const SignInScreen = {
       </form>
     </div>
   </div>
-
+</div>
 
 
     `
-    
+
   },
   after_render: () => {
     document.getElementById("signin-form").addEventListener("submit", async (e) => {
@@ -53,9 +53,9 @@ const SignInScreen = {
       hideLoading();
       if (data.error) {
         showMessage(data.error);
-      }else {
+      } else {
         setUserInfo(data);
-        document.location.hash = "/"
+        redirectUser();
       }
     });
   }
