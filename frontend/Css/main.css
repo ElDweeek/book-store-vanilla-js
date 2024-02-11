@@ -311,7 +311,7 @@ nav .container .shop-cart svg {
   position: absolute;
   top: 150%;
   right: 3%;
-
+  cursor: pointer;
   &:hover {
     color: rgb(133, 28, 28);
   }
