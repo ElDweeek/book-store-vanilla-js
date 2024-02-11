@@ -73,7 +73,7 @@ const Nav = {
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-          <li><input class="search d-block d-lg-none" type="text" id ="mob-search" placeholder="Search...."></li>
+          <li><input class="search d-block d-lg-none" type="text" id="mob-search" placeholder="Search...."></li>
           <li class="nav-item">
             <a class="nav-link m-1 p-2 p-lg-3" aria-current="page" href="/#/">Home</a>
           </li>
@@ -92,34 +92,41 @@ const Nav = {
         </ul>
         <div class="search-icon-div ps-3 pe-3 d-none d-lg-block">
           <span class="fa-brands fa-searchengin search-icon"></span>
-          <input class="searchArea" type="text" id ="desk-search" placeholder="Author / Book" autofocus>
+          <input class="searchArea" type="text" id="desk-search" placeholder="Author / Book" autofocus>
         </div>
-        
+  
         ${fName ?
-          `
-          <div class="dropdown" id="dropdown">
-            ${fName}
-              <div class="profile-menu">
-
-                <div class="settings option">
-                  <a href="/#/profile">
-                  <i class="fa-solid fa-user-gear"></i>
-                  Profile Settings</a>
-                </div>
-
-                <div class="logout option">
-                  <a href="/#/" id="logout-option">
-                  <img src="../../imgs/logout.png" alt="">
-                  Log out</a>
-                </div>
-
-              </div>
+        `
+        <div class="dropdown" id="dropdown">
+          ${fName}
+          <div class="profile-menu">
+  
+            <div class="settings option">
+              <a href="/#/profile">
+                <i class="fa-solid fa-user-gear"></i>
+                Profile Settings</a>
+            </div>
+  
+            <div class="logout option">
+              <a href="/#/" id="logout-option">
+                <img src="../../imgs/logout.png" alt="">
+                Log out</a>
+            </div>
+  
           </div>
-          `
-          : `<a class="btn main-btn ps-4 pe-4" href="#/signin">Login</a>`
+        </div>
+        `
+        : `<a class="btn main-btn ps-4 pe-4" href="#/signin">Login</a>`
         }
       </div>
-  <div class="shop-cart"><a href="/#/cart"><i class="fa-solid fa-cart-shopping"></i></a></div>
+      <div class="shop-cart">
+        ${fName ?
+        `
+        <a href="/#/cart"><i class="fa-solid fa-cart-shopping"></i></a>`
+        :
+        `<i class="fa-solid fa-cart-shopping"></i>`
+        }
+      </div>
     </div>
   </nav>
     `
