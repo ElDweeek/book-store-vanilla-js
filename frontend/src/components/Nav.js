@@ -4,16 +4,22 @@ const Nav = {
   after_render: () => {
     // Nav Section -----------------------------------------------------------------------------------
 
-    const activePage = window.location.hash;
-
-
+    const activePage = window.location.hash.slice(2); // Remove the '#' from activePage
     const navLinks = document.querySelectorAll('.navbar-nav a');
-
+    
     navLinks.forEach(link => {
-      if (link.href.includes(`${activePage}`)) {
-        link.classList.add('active');
-      }
+        const linkHash = link.getAttribute('href').split('/').pop();
+    
+        // Check if the last part of the link's href matches the active page
+        if (linkHash === activePage) {
+            link.classList.add('active');
+        }
     });
+    
+    
+    
+    
+    
 
 
 
@@ -70,19 +76,19 @@ const Nav = {
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
           <li><input class="search d-block d-lg-none" type="text" id ="mob-search" placeholder="Search...."></li>
           <li class="nav-item">
-            <a class="nav-link p-2 p-lg-3" aria-current="page" href="/#/">Home</a>
+            <a class="nav-link m-1 p-2 p-lg-3" aria-current="page" href="/#/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link p-2 p-lg-3 " aria-current="page" href="/#/authors">Authors</a>
+            <a class="nav-link m-1 p-2 p-lg-3 " aria-current="page" href="/#/authors">Authors</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link p-2 p-lg-3 " aria-current="page" href="/#/books">Books</a>
+            <a class="nav-link m-1 p-2 p-lg-3 " aria-current="page" href="/#/books">Books</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link p-2 p-lg-3 " aria-current="page" href="/#/about">About</a>
+            <a class="nav-link m-1 p-2 p-lg-3 " aria-current="page" href="/#/about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link p-2 p-lg-3 " aria-current="page" href="/#/contact">Contact</a>
+            <a class="nav-link m-1 p-2 p-lg-3 " aria-current="page" href="/#/contact">Contact</a>
           </li>
         </ul>
         <div class="search-icon-div ps-3 pe-3 d-none d-lg-block">
@@ -91,25 +97,28 @@ const Nav = {
         </div>
         
         ${fName ?
-        `
+          `
           <div class="dropdown" id="dropdown">
             ${fName}
-            <div class="profile-menu">
-              <div class="settings option">
-                
-                <a href="/#/profile">
-                <i class="fa-solid fa-user-gear"></i>
-                Profile Settings</a>
+              <div class="profile-menu">
+
+                <div class="settings option">
+                  <a href="/#/profile">
+                  <i class="fa-solid fa-user-gear"></i>
+                  Profile Settings</a>
+                </div>
+
+                <div class="logout option">
+                  <a href="/#/" id="logout-option">
+                  <img src="../../imgs/logout.png" alt="">
+                  Log out</a>
+                </div>
+
               </div>
-              <div class="logout option">
-                <a href="/#/" id="logout-option">
-                <img src="../../imgs/logout.png" alt="">
-                Log out</a>
-              </div>
-            </div>
           </div>
           `
-        : `<a class="btn main-btn ps-4 pe-4" href="#/signin">Login</a>`}
+          : `<a class="btn main-btn ps-4 pe-4" href="#/signin">Login</a>`
+        }
       </div>
   <div class="shop-cart"><a href="/#/cart"><i class="fa-solid fa-cart-shopping"></i></a></div>
     </div>

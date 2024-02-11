@@ -6,7 +6,7 @@ const data = {
       class: 'engSlide',
       title: 'Top English Authors',
       name1: 'John Milton',
-      snapshot1: 'English is often referred to as ‘the language of Shakespeare and Milton.’ Milton’s poetry has been seen as the most perfect poetic expression in the English language for four centuries.',
+      snapshot1: 'English is often referred to as ‘the language of Shakespeare and Milton. Milton’s poetry has been seen as the most perfect poetic expression in the English language for four centuries.',
       image1: './imgs/authors/eng1.jpg',
 
       name2: 'william shakespeare',

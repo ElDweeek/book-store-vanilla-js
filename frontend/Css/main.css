@@ -1264,7 +1264,7 @@ h3 {
 
 /* ----------------Singin Section ----------*/
 .signinScreen,
-.regsiterScreen,
+.registerScreen,
 .shippingScreen,
 .paymentScreen {
   background-color: var(--Beige);
@@ -1857,13 +1857,12 @@ h3 {
     text-align: center;
     border-top: .3rem solid ;
     color: var(--Black-brown);
-    opacity: .7;
+    opacity: .4;
     flex: 1 1;
     padding-top: 1rem;
   }
   & .active {
     color: rgb(186, 27, 27);
-    transition: 1s;
     opacity: 1;
   }
 }
