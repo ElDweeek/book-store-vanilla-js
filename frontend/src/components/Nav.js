@@ -9,7 +9,6 @@ const Nav = {
     
     navLinks.forEach(link => {
         const linkHash = link.getAttribute('href').split('/').pop();
-    
         // Check if the last part of the link's href matches the active page
         if (linkHash === activePage) {
             link.classList.add('active');

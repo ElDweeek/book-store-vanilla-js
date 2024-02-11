@@ -29,6 +29,7 @@ export const setCartItems = (cartItems) => {
   }
   export const clearUser = () => {
     localStorage.removeItem('userInfo')
+    localStorage.removeItem('cartItems') // ?????????????/
   }
   export const getUserInfo = () => {
     return localStorage.getItem('userInfo')?
