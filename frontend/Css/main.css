@@ -1849,7 +1849,7 @@ h3 {
 .checkout-steps {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 70%;
   margin: 1rem auto;
   &>div {
     font-size: 1.4rem;
@@ -1875,15 +1875,18 @@ h3 {
 .placeOrder-screen {
   background-color: var(--Beige);
   padding: var(--section-padding) 0;
-
+  & div {
+    font-weight: 600;
+  }
   & .order {
     display: flex;
+    flex-wrap: wrap;
     & .order-info {
       flex: 3;
       & .section {
         background-color: rgb(210 161 161 / 21%);
         padding: 10px;
-        margin-bottom: 10px;
+        margin: 10px;
         border: .1rem solid rgb(82, 20, 20);
         border-radius: 4px;
       }

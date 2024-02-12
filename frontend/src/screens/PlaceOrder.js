@@ -56,7 +56,7 @@ const PlaceOrderScreen = {
             <h2>Shipping</h2>
             <div>
               ${shipping.address}, ${shipping.city},
-              ${shipping.postalCode},${shipping.country}
+              ${shipping.postalCode}, ${shipping.country}
             </div>
           </div>
           <div class="section">
