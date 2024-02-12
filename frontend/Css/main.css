@@ -4,7 +4,6 @@
   --Black-brown: hsl(300, 3%, 12%);
   --Dark-petroleum: hsl(215, 80%, 22%);
   --Pistachio: hsl(135, 14%, 77%);
-  --text-color: hsl(0, 0%, 47%);
   --section-padding: 50px;
 }
 
@@ -15,6 +14,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   user-select: none;
+  
 }
 
 #main-section {
@@ -359,9 +359,9 @@ nav .container .shop-cart svg {
   & p {
     font-size: 18px;
     font-style: italic;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 2;
-    color: var(--text-color);
+    color: #444;
   }
 }
 
@@ -927,7 +927,7 @@ h3 {
 
 
 
-/****Start InfoScreen******** Start InfoScreen ********Start InfoScreen****/
+/* Start InfoScreen */
 
 
 .infoScreen {
@@ -1078,10 +1078,10 @@ h3 {
 }
 
 
-/********End InfoScreen ****** End InfoScreen *********End InfoScreen********/
+/* End InfoScreen */
 
 
-/********Start CartScreen ****** Start CartScreen *********Start CartScreen********/
+/* Start CartScreen */
 .cart-screen {
   flex: 1;
   background-color: var(--Pistachio);
@@ -1256,13 +1256,13 @@ h3 {
 }
 
 
-/********End CartScreen ****** End CartScreen *********End CartScreen********/
+/* End CartScreen */
 
 
 
-/********Start SignInScreen && RegisterScreen ****** Start SignInScreen && RegisterScreen ***********/
+/* Start SignInScreen && RegisterScreen */
 
-/* ----------------Singin Section ----------*/
+/* ---------Singin Section ----------*/
 .signinScreen,
 .registerScreen,
 .shippingScreen,
@@ -1355,7 +1355,7 @@ h3 {
     }
   }
 
-  /* ----------------Register Section ----------*/
+  /* ---------Register Section ----------*/
   & .form-box .register-form {
     width: 480px;
     color: var(--Black-brown);
@@ -1472,10 +1472,10 @@ h3 {
   }
 }
 
-/********End SignInScreen && RegisterScreen ****** End SignInScreen && RegisterScreen ***********/
+/* End SignInScreen && RegisterScreen */
 
 
-/******* Start ProfileScreen ******Start ProfileScreen*******Start ProfileScreen*******/
+/* Start ProfileScreen */
 
 .profile-screen {
   display: flex;
@@ -1682,11 +1682,11 @@ h3 {
   }
 }
 
-/******* End ProfileScreen ******End ProfileScreen*******End ProfileScreen*******/
+/* End ProfileScreen */
 
 
 
-/******* Start ShippingScreen ******Start ShippingScreen*******Start ShippingScreen*******/
+/* Start ShippingScreen */
 .ShippingScreen {
   background-color: var(--Beige);
   padding: var(--section-padding) 0;
@@ -1764,8 +1764,8 @@ h3 {
   }
 }
 
-/******* End ShippingScreen ******End ShippingScreen*******End ShippingScreen*******/
-/******* Start PaymentScreen ******Start PaymentScreen*******Start PaymentScreen*******/
+/* End ShippingScreen */
+/* Start PaymentScreen */
 
 .form-box .payment-form {
   height: 482.75px;
@@ -1843,9 +1843,9 @@ h3 {
     padding: 30px 30px;
   }
 }
-/******* End PaymentScreen ******End PaymentScreen*******End PaymentScreen*******/
+/* End PaymentScreen */
 
-/* CheckoutSteps */
+/* Start CheckoutSteps */
 .checkout-steps {
   display: flex;
   justify-content: space-between;
@@ -1866,3 +1866,37 @@ h3 {
     opacity: 1;
   }
 }
+
+/* End CheckoutSteps */
+
+
+/* Start PlaceOrderScreen */
+
+.placeOrder-screen {
+  background-color: var(--Beige);
+  padding: var(--section-padding) 0;
+
+  & .order {
+    display: flex;
+    & .order-info {
+      flex: 3;
+      & .section {
+        background-color: rgb(210 161 161 / 21%);
+        padding: 10px;
+        margin-bottom: 10px;
+        border: .1rem solid rgb(82, 20, 20);
+        border-radius: 4px;
+      }
+      & ul {
+        list-style: none;
+        padding: 0;
+        & li {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+
+/* End PlaceOrderScreen */
