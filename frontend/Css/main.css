@@ -1203,8 +1203,8 @@ h3 {
         }
 
         & img {
-          max-width: 160px;
-          max-height: 267px;
+          width: 160px;
+          height: 160px;
         }
       }
     }
@@ -1866,7 +1866,18 @@ h3 {
     opacity: 1;
   }
 }
+@media (max-width: 992px) {
+  .checkout-steps {
+    width: 95%;
+  }
+}
 
+@media (max-width: 767px) {
+  .checkout-steps>div {
+    text-align: start;
+    font-size: 1rem;
+  }
+}
 /* End CheckoutSteps */
 
 
@@ -1875,12 +1886,12 @@ h3 {
 .placeOrder-screen {
   background-color: var(--Beige);
   padding: var(--section-padding) 0;
-  & div {
+  &>div {
     font-weight: 600;
+    font-size: 1.2rem;
   }
   & .order {
     display: flex;
-    flex-wrap: wrap;
     & .order-info {
       flex: 3;
       & .section {
@@ -1889,12 +1900,62 @@ h3 {
         margin: 10px;
         border: .1rem solid rgb(82, 20, 20);
         border-radius: 4px;
+        & .cart-list-container>li:first-child {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        & .cart-list-container>.details-holder {
+          display: flex;
+          justify-content: space-between;
+          gap: 50px;
+          & .img-specs-holder {
+            display: flex;
+            & .cart-image img {
+              width: 160px;
+              height: 160px;
+            }
+            & .cart-name {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+              margin-left: 30px;
+            }
+          }
+          
+        }
       }
       & ul {
         list-style: none;
         padding: 0;
+      }
+    }
+    & .order-action {
+      background-color: rgb(210 161 161 / 21%);
+      border: .1rem solid rgb(82, 20, 20);
+      border-radius: 4px;
+      padding: 10px;
+      margin: 10px;
+      ul {
+        list-style: none;
+        padding: 0 20px;
         & li {
-          margin-bottom: 20px;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 4px;
+          
+          &.order-total {
+            color: rgb(188, 43, 43);
+            margin-top: 25px;
+            &>div {
+              font-size: 1.3rem;
+              font-weight: 700;
+            }
+          }
+          & .placeOrder-btn {
+            width: 100%;
+            margin-top: 30px;
+          }
         }
       }
     }
@@ -1902,4 +1963,16 @@ h3 {
 }
 
 
+
+
+
+
+
+
+
+@media (max-width: 767px) {
+  .placeOrder-screen .order {
+    flex-direction: column;
+  }
+}
 /* End PlaceOrderScreen */

@@ -71,25 +71,30 @@ const PlaceOrderScreen = {
                 <h2>Shopping Cart</h2>
                 <div>Price</div>
               </li>
+              <hr />
+
               ${
                 orderItems.map(item => `
-                  <li>
+                  <li class="details-holder">
+                  <div class="img-specs-holder">
                     <div class="cart-image">
                       <img src="${item.image}" alt="${item.name}" />
                     </div>
-                    <div class="cart-item">
+                    <div class="cart-name">
                       <div>
                         <a href="/#/product/${item.product}">${item.name}</a>
                       </div>
                       <div>
                         Qty: ${item.qty}
                       </div>
-                      <div class="cart-price">
-                        $${item.price}
-                      </div>
                     </div>
+                  </div>
+                  <div class="cart-price">
+                    $${item.price}
+                  </div>
                   </li>
-                `)
+                  <hr />
+                `).join('\n')
               }
             </ul>
           </div>
@@ -110,11 +115,11 @@ const PlaceOrderScreen = {
             <li>
               <div>Tax</div><div>$${taxPrice}</div>
             </li>
-            <li>
+            <li class="order-total">
               <div>Order Total</div><div>$${totalPrice}</div>
             </li>
             <li>
-              <button class="placeOrder-btn">
+              <button class="placeOrder-btn btn">
                 Place Order
               </button>
             </li>
