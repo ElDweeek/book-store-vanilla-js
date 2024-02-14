@@ -60,7 +60,7 @@ const data = {
 
   engProducts: [
     {
-      _id: '1',
+      _id: '111111111111111111111111',
       name: 'a',
       image: './imgs/Books/eng1.jpg',
       price: 11.75,
@@ -70,7 +70,7 @@ const data = {
       description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`
     },
     {
-      _id: '2',
+      _id: '222222222222222222222222',
       name: 'b',
       image: './imgs/Books/eng1.jpg',
       price: 8.75,
@@ -80,7 +80,7 @@ const data = {
       description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`
     },
     {
-      _id: '3',
+      _id: '333333333333333333333333',
       name: 'c',
       image: './imgs/Books/eng1.jpg',
       price: 8.75,
@@ -90,7 +90,7 @@ const data = {
       description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`
     },
     {
-      _id: '4',
+      _id: '444444444444444444444444',
       name: 'd',
       image: './imgs/Books/eng1.jpg',
       price: 7.75,
@@ -100,7 +100,7 @@ const data = {
       description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`
     },
     {
-      _id: '5',
+      _id: '555555555555555555555555',
       name: 'e',
       image: './imgs/Books/eng1.jpg',
       price: 5.75,
@@ -110,7 +110,7 @@ const data = {
       description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`
     },
     {
-      _id: '6',
+      _id: '666666666666666666666666',
       name: 'f',
       image: './imgs/Books/eng1.jpg',
       price: 6.75,
@@ -120,7 +120,7 @@ const data = {
       description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`
     },
     {
-      _id: '7',
+      _id: '777777777777777777777777',
       name: 'g',
       image: './imgs/Books/eng1.jpg',
       price: 10.75,
@@ -130,7 +130,7 @@ const data = {
       description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`
     },
     {
-      _id: '8',
+      _id: '888888888888888888888888',
       name: 'h',
       image: './imgs/Books/eng1.jpg',
       price: 3.75,
@@ -140,7 +140,7 @@ const data = {
       description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`
     },
     {
-      _id: '9',
+      _id: '999999999999999999999999',
       name: 'i',
       image: './imgs/Books/eng1.jpg',
       price: 5.75,
@@ -150,7 +150,7 @@ const data = {
       description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`
     },
     {
-      _id: '10',
+      _id: '101010101010101010101010',
       name: 'j',
       image: './imgs/Books/eng1.jpg',
       price: 8,
@@ -163,7 +163,7 @@ const data = {
 
   arProducts: [
     {
-      _id: '01',
+      _id: '010101010101010101010101',
       name: 'a',
       image: './imgs/Books/ar1.png',
       price: 11.75,
@@ -173,7 +173,7 @@ const data = {
       description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`,
     },
     {
-      _id: '02',
+      _id: '020202020202020202020202',
       name: 'b',
       image: './imgs/Books/ar1.png',
       price: 8.75,
@@ -183,7 +183,7 @@ const data = {
       description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`,
     },
     {
-      _id: '03',
+      _id: '030303030303030303030303',
       name: 'c',
       image: './imgs/Books/ar1.png',
       price: 8.75,
@@ -193,7 +193,7 @@ const data = {
       description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`,
     },
     {
-      _id: '04',
+      _id: '040404040404040404040404',
       name: 'd',
       image: './imgs/Books/ar1.png',
       price: 7.75,
@@ -203,7 +203,7 @@ const data = {
       description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`
     },
     {
-      _id: '05',
+      _id: '050505050505050505050505',
       name: 'e',
       image: './imgs/Books/ar1.png',
       price: 5.75,
@@ -213,7 +213,7 @@ const data = {
       description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`
     },
     {
-      _id: '06',
+      _id: '060606060606060606060606',
       name: 'f',
       image: './imgs/Books/ar1.png',
       price: 6.75,
@@ -223,7 +223,7 @@ const data = {
       description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`
     },
     {
-      _id: '07',
+      _id: '070707070707070707070707',
       name: 'g',
       image: './imgs/Books/ar1.png',
       price: 10.75,
@@ -233,7 +233,7 @@ const data = {
       description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`
     },
     {
-      _id: '08',
+      _id: '080808080808080808080808',
       name: 'h',
       image: './imgs/Books/ar1.png',
       price: 3.75,
@@ -243,7 +243,7 @@ const data = {
       description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`
     },
     {
-      _id: '09',
+      _id: '090909090909090909090909',
       name: 'i',
       image: './imgs/Books/ar1.png',
       price: 5.75,
@@ -253,7 +253,7 @@ const data = {
       description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`
     },
     {
-      _id: '010',
+      _id: '010010010010010010010010',
       name: 'j',
       image: './imgs/Books/ar1.png',
       price: 8,

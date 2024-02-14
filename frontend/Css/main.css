@@ -278,7 +278,7 @@ nav {
 
     & img {
       background-color: var(--Beige);
-      padding: 6px;
+      padding: 3px;
       border-radius: 50%;
       cursor: pointer;
     }

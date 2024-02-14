@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import config from "./config";
 import userRouter from "./routers/userRouter";
+import orderRouter from "./routers/orderRouter";
 
 mongoose.connect(config.MONGODB_URL, {
   // useNewUrlParser :true,
@@ -22,6 +23,9 @@ const port = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/api/users', userRouter);
+
+app.get('/api/orders', orderRouter);
+
 
 
 

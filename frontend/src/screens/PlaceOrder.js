@@ -1,5 +1,7 @@
+import { createOrder } from "../api";
 import CheckoutSteps from "../components/CheckoutSteps";
-import { getCartItems, getPayment, getShipping } from "../localStorage"
+import { cleanCart, getCartItems, getPayment, getShipping } from "../localStorage"
+import { hideLoading, showLoading, showMessage } from "../utils";
 
 
 
@@ -119,7 +121,7 @@ const PlaceOrderScreen = {
               <div>Order Total</div><div>$${totalPrice}</div>
             </li>
             <li>
-              <button class="placeOrder-btn btn">
+              <button id="place-order-btn" class="placeOrder-btn btn">
                 Place Order
               </button>
             </li>
@@ -137,8 +139,22 @@ const PlaceOrderScreen = {
 
 
   after_render: () => {
+    document.getElementById('place-order-btn')
+    .addEventListener('click', async() => {
+      const order = convertCartToOrder();
+      showLoading();
+      const data = await createOrder(order)
+      hideLoading();
+      if (data.error) {
+        showMessage(data.error);
+      } else {
+        cleanCart();
+        document.location.hash = `/order/${data.order._id}`
+      }
+    })
 
   }
+
 }
 
 export default PlaceOrderScreen;
