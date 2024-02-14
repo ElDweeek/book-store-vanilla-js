@@ -276,8 +276,11 @@ nav {
       transform: translateX(-50%);
     }
 
-    &:hover svg {
-      color: var(--Pistachio);
+    & img {
+      background-color: var(--Beige);
+      padding: 6px;
+      border-radius: 50%;
+      cursor: pointer;
     }
 
     &.active {

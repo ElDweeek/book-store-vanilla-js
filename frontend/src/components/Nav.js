@@ -25,11 +25,11 @@ const Nav = {
 
 
     const searchArea = document.querySelector(".searchArea");
-
     const searchNav = document.querySelector(".search-icon-div");
-
+    const searchImageNav = document.querySelector(".search-img")
+    
     document.addEventListener("click", function (e) {
-      if (e.target == searchNav || e.target == searchArea)
+      if (e.target == searchImageNav || e.target == searchArea)
         searchNav.classList.add("active")
       else searchNav.classList.remove("active")
     });
@@ -91,7 +91,7 @@ const Nav = {
           </li>
         </ul>
         <div class="search-icon-div ps-3 pe-3 d-none d-lg-block">
-          <span class="fa-brands fa-searchengin search-icon"></span>
+          <img src="../../imgs/search.png" alt="search.." class="search-img"/>
           <input class="searchArea" type="text" id="desk-search" placeholder="Author / Book" autofocus>
         </div>
   
