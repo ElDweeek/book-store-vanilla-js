@@ -23,7 +23,7 @@ const OrderScreen = {
 
     return `
   <div class="placeOrder-screen">
-  <h3 class="ms-5">Order ${_id}</h3>
+  <h3 class="ms-5">Order : ${_id}</h3>
     <div class="container">
       <div class="order">
         <div class="order-info">
