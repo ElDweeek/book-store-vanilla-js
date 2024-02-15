@@ -15,11 +15,13 @@ import { hideLoading, parseRequestUrl, showLoading } from "./utils.js";
 import ShippingScreen from "./screens/ShippingScreen.js";
 import PaymentScreen from "./screens/PaymentScreen.js";
 import PlaceOrderScreen from "./screens/PlaceOrder.js";
+import OrderScreen from "./screens/OrderScreen.js";
 
 
 const routes = {
   '/': HomeScreen,
   '/info/:id': InfoScreen,
+  '/order/:id': OrderScreen,
   '/cart/:id' : CartScreen,
   '/cart' : CartScreen,
   '/signin': SignInScreen,

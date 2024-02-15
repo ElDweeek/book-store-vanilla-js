@@ -24,7 +24,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use('/api/users', userRouter);
 
-app.get('/api/orders', orderRouter);
+app.use('/api/orders', orderRouter);
 
 
 

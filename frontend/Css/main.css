@@ -711,7 +711,7 @@ nav .container .shop-cart svg {
 
   & img {
     width: 100%;
-    height: 70%;
+    height: 63%;
     transition: 1s;
   }
 
@@ -1206,8 +1206,8 @@ h3 {
         }
 
         & img {
-          width: 160px;
-          height: 160px;
+          width: 135px;
+          height: 180px;
         }
       }
     }
@@ -1915,14 +1915,22 @@ h3 {
           & .img-specs-holder {
             display: flex;
             & .cart-image img {
-              width: 160px;
-              height: 160px;
+              width: 135px;
+              height: 180px;
             }
             & .cart-name {
               display: flex;
               flex-direction: column;
               justify-content: space-around;
-              margin-left: 30px;
+              margin-left: 10px;
+              & a {
+                color: var(--Black-brown);
+                text-decoration: none;
+                font-weight: 700;
+                &:hover {
+                  color: var(--Dark-petroleum);
+                }
+              }
             }
           }
           

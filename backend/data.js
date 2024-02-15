@@ -61,7 +61,7 @@ const data = {
   engProducts: [
     {
       _id: '111111111111111111111111',
-      name: 'a',
+      name: 'waw awa awaw awaw awawaw',
       image: './imgs/Books/eng1.jpg',
       price: 11.75,
       numReview: 543,

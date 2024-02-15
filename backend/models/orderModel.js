@@ -23,11 +23,11 @@ const orderSchema = new mongoose.Schema(
     shipping: {
       address: String,
       city: String,
-      postaCode: String,
+      postalCode: String,
       country: String,
     },
     payment: {
-      paymentMethode: String,
+      paymentMethod: String,
       paymentResult: {
         orderID: String,
         payerID: String,
