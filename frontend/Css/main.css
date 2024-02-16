@@ -1685,8 +1685,12 @@ h3 {
 }
 
 .profile-screen .content-box{
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: 0;
   & table {
-  width: 100%;
+    width: 100%;
   & th {
     text-align: left;
   }
