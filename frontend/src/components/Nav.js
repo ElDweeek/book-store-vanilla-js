@@ -29,7 +29,7 @@ const Nav = {
     const searchImageNav = document.querySelector(".search-img")
     
     document.addEventListener("click", function (e) {
-      if (e.target == searchImageNav || e.target == searchArea)
+      if (e.target === searchImageNav || e.target === searchArea)
         searchNav.classList.add("active")
       else searchNav.classList.remove("active")
     });
@@ -64,7 +64,7 @@ const Nav = {
     <div class="container">
       <div class="nav-logo">
         <a class="navbar-brand" href="/#/">
-          <img src="./imgs/NavLogo.png" alt="">
+          <img src="./imgs/NavLogo.png" alt="Logo">
         </a>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

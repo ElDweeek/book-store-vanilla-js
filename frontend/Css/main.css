@@ -281,6 +281,9 @@ nav {
       padding: 3px;
       border-radius: 50%;
       cursor: pointer;
+      &:hover {
+        scale: .8;
+      }
     }
 
     &.active {
@@ -290,7 +293,7 @@ nav {
         visibility: visible;
         border-radius: 4px;
         top: 150%;
-        transition: 1s ease-out;
+        transition: .7s ease-out;
         box-shadow: 10px 15px 6px var(--Black-brown);
 
         &:focus {
@@ -1557,15 +1560,10 @@ h3 {
         box-shadow: -20px -20px 6px rgba(0, 0, 0, .25);
 
         & .view-list {
-          position: relative;
-          height: 750px;
+          min-height: 700px;
         }
 
         & .content-box {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
           display: none;
           padding: 0 20px;
           margin-top: 30px;
@@ -1573,12 +1571,12 @@ h3 {
           &.active {
             display: block;
           }
-
+          & h1 {
+            font-weight: 700;
+            margin-bottom: 20px;
+          }
           & form {
-            & h1 {
-              font-weight: 700;
-              margin-bottom: 30px;
-            }
+            
 
             & .flex-container {
               display: flex;
@@ -1587,7 +1585,8 @@ h3 {
 
             & p {
               flex: 2 3;
-              color: #444;
+              color: #777;
+              font-weight: 600;
             }
 
             & .form-items {
@@ -1685,6 +1684,20 @@ h3 {
   }
 }
 
+.profile-screen .content-box{
+  & table {
+  width: 100%;
+  & th {
+    text-align: left;
+  }
+  & tbody > tr:nth-child(odd){
+    background-color: #f8e5e5;
+  }
+  & td {
+    padding: .5rem;
+  }
+}
+}
 /* End ProfileScreen */
 
 

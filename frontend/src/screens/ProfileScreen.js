@@ -1,13 +1,14 @@
-import { personalUpdate } from "../api";
+import { getMyOrders, personalUpdate } from "../api";
 import { getUserInfo, setUserInfo } from "../localStorage";
 import { hideLoading, showLoading, showMessage } from "../utils";
 
 const ProfileScreen = {
-  render: () => {
+  render: async () => {
     const {fName,lName, email, date, phoneNumber} = getUserInfo();
     if (!fName) {
     document.location.hash = '/';
     }
+    const orders = await getMyOrders()
     return `
 
 
@@ -89,13 +90,44 @@ const ProfileScreen = {
 
 
               <div class="content-box" id="my-address-book">
-                <p>ssssssssssjjjjjjjjj</p>
+              <form id="myAddress-form" class="myAddress-form">
+                <h1>My Address Book</h1>
+                  <ul class="form-items">
+                
+                  </ul>
+                </form>
               </div>
               <div class="content-box" id="my-orders">
-                <p>eeeerrrrrrrr</p>
+                <h1>Order History</h1>
+                <table>
+
+                  <thead>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Total</th>
+                    <th>Paid</th>
+                    <th>Delivered</th>
+                    <th>Actions</th>
+                  </thead>
+
+                  <tbody>
+                  ${orders.length ===0 ? `<tr><td colspan="6">No Order Found</tr>` : orders.map(order => `
+                  <tr>
+                  <td>${order._id}</td>
+                  <td>${order.createdAt}</td>
+                  <td>${order.totalPrice}</td>
+                  <td>${order.PaidAt || 'Not yet'}</td>
+                  <td>${order.DeliveredAt || 'Not yet'}</td>
+                  <td><a href="/#/order/${order._id}">Details</a></td>
+                  </tr>
+                  `).join('\n')} 
+                  </tbody>
+                
+                </table>
               </div>
               <div class="content-box" id="account-settings">
-                <form id="settings-form" class="account-settings">
+                <form id="accSettings-form" class="accSettings-form">
+                <h1>Account Settings</h1>
                   <ul class="form-items">
                     <li>
                       <input type="password" name="old-password" id="old-password" placeholder="Enter your old Password" />
@@ -124,47 +156,47 @@ const ProfileScreen = {
   },
   after_render: () => {
 
-    const myDetailslink = document.getElementById('myDetails-link');
-    const myDetailscontent = document.getElementById('my-details');
-    const myAddresslink = document.getElementById('myAddress-link');
-    const myAddresscontent = document.getElementById('my-address-book');
-    const myOderslink = document.getElementById('myOrders-link');
-    const myOrderscontent = document.getElementById('my-orders');
-    const accountSettingslink = document.getElementById('accountSettings-link');
-    const accountSettingscontent = document.getElementById('account-settings');
+    const myDetailsLink = document.getElementById('myDetails-link');
+    const myDetailsContent = document.getElementById('my-details');
+    const myAddressLink = document.getElementById('myAddress-link');
+    const myAddressContent = document.getElementById('my-address-book');
+    const myOdersLink = document.getElementById('myOrders-link');
+    const myOrdersContent = document.getElementById('my-orders');
+    const accountSettingsLink = document.getElementById('accountSettings-link');
+    const accountSettingsContent = document.getElementById('account-settings');
 
     const removeAllActive = ()=> {
-      myDetailslink.classList.remove('active'),
-      myDetailscontent.classList.remove('active'),
-      myAddresslink.classList.remove('active'),
-      myAddresscontent.classList.remove('active'),
-      myOderslink.classList.remove('active'),
-      myOrderscontent.classList.remove('active'),
-      accountSettingslink.classList.remove('active'),
-      accountSettingscontent.classList.remove('active')
+      myDetailsLink.classList.remove('active'),
+      myDetailsContent.classList.remove('active'),
+      myAddressLink.classList.remove('active'),
+      myAddressContent.classList.remove('active'),
+      myOdersLink.classList.remove('active'),
+      myOrdersContent.classList.remove('active'),
+      accountSettingsLink.classList.remove('active'),
+      accountSettingsContent.classList.remove('active')
     }
 
     document.addEventListener('click', (e)=>{
-    if(e.target == myDetailslink) {
+    if(e.target === myDetailsLink) {
       removeAllActive()
-      myDetailslink.classList.add('active'),
-      myDetailscontent.classList.add('active')
+      myDetailsLink.classList.add('active'),
+      myDetailsContent.classList.add('active')
 
 
-    } else if (e.target == myAddresslink) {
+    } else if (e.target === myAddressLink) {
       removeAllActive()
-      myAddresslink.classList.add('active'),
-      myAddresscontent.classList.add('active')
+      myAddressLink.classList.add('active'),
+      myAddressContent.classList.add('active')
     }
-    else if (e.target == myOderslink) {
+    else if (e.target === myOdersLink) {
       removeAllActive()
-      myOderslink.classList.add('active'),
-      myOrderscontent.classList.add('active')
+      myOdersLink.classList.add('active'),
+      myOrdersContent.classList.add('active')
     }
-    else if (e.target == accountSettingslink) {
+    else if (e.target === accountSettingsLink) {
       removeAllActive()
-      accountSettingslink.classList.add('active'),
-      accountSettingscontent.classList.add('active')
+      accountSettingsLink.classList.add('active'),
+      accountSettingsContent.classList.add('active')
     }
   })
 
