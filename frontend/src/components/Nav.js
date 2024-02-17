@@ -4,6 +4,7 @@ const Nav = {
   after_render: () => {
     // Nav Section -----------------------------------------------------------------------------------
 
+
     const activePage = window.location.hash.slice(2); // Remove the '#' from activePage
     const navLinks = document.querySelectorAll('.navbar-nav a');
     
@@ -58,7 +59,7 @@ const Nav = {
   },
 
   render: () => {
-    const { fName } = getUserInfo();
+    const { fName, isAdmin } = getUserInfo();
     return `
     <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
@@ -98,7 +99,7 @@ const Nav = {
         ${fName ?
         `
         <div class="dropdown" id="dropdown">
-          ${fName}
+          ${fName[0].toUpperCase()}
           <div class="profile-menu">
   
             <div class="settings option">
@@ -118,6 +119,10 @@ const Nav = {
         `
         : `<a class="btn main-btn ps-4 pe-4" href="#/signin">Login</a>`
         }
+        ${isAdmin ? 
+          `<div class="dashboard-link"><a href="/#/dashboard">Dashboard</a></div>` : ''
+        }
+
       </div>
       <div class="shop-cart">
         ${fName ?

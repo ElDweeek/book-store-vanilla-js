@@ -5,7 +5,9 @@ import { generateToken, isAuth } from '../utils';
 
 const userRouter = express.Router();
 
-userRouter.get("/admin", expressAsyncHandler( async (req, res) => {
+userRouter.get(
+  "/createadmin", 
+  expressAsyncHandler( async (req, res) => {
   try {
     const user = new User({
       fName: 'Abdelrahman',

@@ -42,7 +42,7 @@ const OrderScreen = {
           <div class="section">
             <h2>Payment</h2>
             <div>
-              Payment Method : ${payment.paymentMethod}
+              Payment Method : ${payment?.paymentMethod ?? ''}
             </div>
             ${isPaid? 
               `<div class="text-success">Paid at ${paidAt}</div>`

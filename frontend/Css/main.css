@@ -181,7 +181,7 @@ nav {
 
   & .navbar-nav .nav-link {
     color: var(--Beige);
-    font: 20px bold;
+    font-weight: 600;
     width: fit-content;
     &.active,
     &:hover {
@@ -192,7 +192,7 @@ nav {
   }
 
   & .navbar-nav input.search {
-    width: 350px;
+    width: 80%;
     height: 40px;
     border: none;
     padding: 0 10px;
@@ -212,14 +212,19 @@ nav {
   }
 
   & .navbar-collapse>div.dropdown {
-      font-size: 1.5rem;
-      width: fit-content;
-      color: var(--Tan);
-      background: hsl(32deg 40% 86% / 11%);
-      padding: 6px 12px;
-      border-radius: 8px;
-      cursor: pointer;
-    
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    color: var(--Tan);
+    background: hsl(32deg 40% 86% / 11%);
+    padding: 2px;
+    border-radius: 50%;
+    cursor: pointer;
+    @media (max-width: 992px) {
+      margin-left: 20px;
+    }
     &.active .profile-menu {
       display: block;
     }
@@ -256,7 +261,6 @@ nav {
   }
 
   & .search-icon-div {
-    margin: 0 5px;
     border-left: 1px solid var(--Beige);
     & .search-icon {
     color: var(--Beige);
@@ -305,6 +309,23 @@ nav {
     }
   }
 
+  & .dashboard-link {
+    margin: 8px;
+    &>a {
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      width: fit-content;
+      color: var(--Tan);
+      background: hsl(32deg 40% 86% / 11%);
+      padding: 6px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    @media (max-width: 992px) {
+      margin-top: 20px;
+    }
+  }
   & .navbar-toggler {
     color: var(--Black-brown);
     background-color: var(--Beige);
@@ -1693,12 +1714,14 @@ h3 {
     width: 100%;
   & th {
     text-align: left;
+    padding: .5rem;
+
   }
   & tbody > tr:nth-child(odd){
     background-color: #f8e5e5;
   }
   & td {
-    padding: .5rem;
+    padding: .5rem .7rem;
   }
 }
 }
@@ -2004,3 +2027,13 @@ h3 {
   }
 }
 /* End PlaceOrderScreen */
+
+
+/* Start DashBoard */
+.dashboard-screen {
+  background-color: var(--Beige);
+  flex: 1;
+
+}
+
+/* End DashBoard */

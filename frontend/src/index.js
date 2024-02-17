@@ -16,6 +16,7 @@ import ShippingScreen from "./screens/ShippingScreen.js";
 import PaymentScreen from "./screens/PaymentScreen.js";
 import PlaceOrderScreen from "./screens/PlaceOrder.js";
 import OrderScreen from "./screens/OrderScreen.js";
+import DashboardScreen from "./screens/DashboardScreen.js";
 
 
 const routes = {
@@ -34,6 +35,7 @@ const routes = {
   '/shipping': ShippingScreen,
   '/payment': PaymentScreen,
   '/placeorder': PlaceOrderScreen,
+  '/dashboard': DashboardScreen,
 };
 
 
