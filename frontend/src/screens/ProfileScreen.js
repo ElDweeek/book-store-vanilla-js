@@ -24,19 +24,27 @@ const ProfileScreen = {
           <aside class="section-links col-md-4">
             <ul>
               <li class="active" id="myDetails-link">
-                <i class="fa-regular fa-address-card"></i>
+                <span>
+                  <i class="fa-regular fa-address-card"></i>
+                </span>
                 My details
               </li>
               <li id="myAddress-link">
-                <i class="fa-solid fa-location-dot"></i>
+                <span>
+                  <i class="fa-solid fa-location-dot"></i>
+                </span>
                 My adress book
               </li>
               <li id="myOrders-link">
-                <i class="fa-solid fa-basket-shopping"></i>
+                <span>
+                  <i class="fa-solid fa-basket-shopping"></i>
+                </span>
                 My orders
               </li>
               <li id="accountSettings-link">
-                <i class="fa-solid fa-gear"></i>
+                <span>
+                  <i class="fa-solid fa-gear"></i>
+                </span>
                 Acount settings
               </li>
             </ul>

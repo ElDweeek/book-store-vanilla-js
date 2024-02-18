@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   user-select: none;
-  
+
 }
 
 #main-section {
@@ -169,6 +169,7 @@ body {
 /* Start Nav */
 nav {
   background-color: var(--Black-brown);
+
   & .nav-logo img {
     width: 270px;
   }
@@ -183,6 +184,7 @@ nav {
     color: var(--Beige);
     font-weight: 600;
     width: fit-content;
+
     &.active,
     &:hover {
       color: var(--Pistachio);
@@ -222,12 +224,15 @@ nav {
     padding: 2px;
     border-radius: 50%;
     cursor: pointer;
+
     @media (max-width: 992px) {
       margin-left: 20px;
     }
+
     &.active .profile-menu {
       display: block;
     }
+
     & .profile-menu {
       display: none;
       position: absolute;
@@ -238,6 +243,7 @@ nav {
       padding: 1.5rem;
       border-radius: 8px;
       margin-top: 20px;
+
       & .option {
         & a {
           display: block;
@@ -247,27 +253,44 @@ nav {
           color: var(--Beige);
           border: 1px solid hsl(32deg 40% 86% / 16%);
         }
+
         & svg {
           color: var(--Beige);
           width: 24px;
         }
-      &.logout {
-        & img {
-          width: 24px;
+
+        &.logout {
+          & img {
+            width: 24px;
+          }
         }
-      }
       }
     }
   }
 
   & .search-icon-div {
     border-left: 1px solid var(--Beige);
-    & .search-icon {
-    color: var(--Beige);
     cursor: pointer;
-    font-size: 18px;
-    padding: 4px;
+
+    &>span {
+      pointer-events: none;
+      display: block;
+      width: 30px;
+      height: 30px;
     }
+    & svg {
+      color: var(--Beige);
+      font-size: 20px;
+      padding: 4px;
+    }
+    &:hover>span {
+      background: hsl(32deg 40% 86% / 11%);
+      border-radius: 50%;
+    }
+    &:hover svg {
+      color: var(--Pistachio);
+    }
+
     & input.searchArea {
       width: 500px;
       padding: 8px;
@@ -285,6 +308,7 @@ nav {
       padding: 3px;
       border-radius: 50%;
       cursor: pointer;
+
       &:hover {
         scale: .8;
       }
@@ -302,7 +326,7 @@ nav {
 
         &:focus {
           transition: 1s ease-in;
-          box-shadow:  -20px -20px 6px rgba(0, 0, 0, .5);
+          box-shadow: -20px -20px 6px rgba(0, 0, 0, .5);
           outline: none;
         }
       }
@@ -311,6 +335,7 @@ nav {
 
   & .dashboard-link {
     margin: 8px;
+
     &>a {
       text-decoration: none;
       font-size: 1rem;
@@ -322,16 +347,19 @@ nav {
       border-radius: 8px;
       cursor: pointer;
     }
+
     @media (max-width: 992px) {
       margin-top: 20px;
     }
   }
+
   & .navbar-toggler {
     color: var(--Black-brown);
     background-color: var(--Beige);
     margin-inline-start: auto;
   }
 }
+
 nav .container .shop-cart svg {
   font-size: 30px;
   color: rgb(186, 27, 27);
@@ -339,6 +367,7 @@ nav .container .shop-cart svg {
   top: 150%;
   right: 3%;
   cursor: pointer;
+
   &:hover {
     color: rgb(133, 28, 28);
   }
@@ -353,6 +382,7 @@ nav .container .shop-cart svg {
     }
   }
 }
+
 /* End Nav */
 
 /* Start Landing */
@@ -702,9 +732,11 @@ nav .container .shop-cart svg {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: 0;
+
     &::-webkit-scrollbar {
       display: none;
     }
+
     &.dragging {
       scroll-snap-type: none;
       scroll-behavior: auto;
@@ -712,9 +744,10 @@ nav .container .shop-cart svg {
   }
 
   .engSlider.no-transition,
-  .arSlider.no-transition{
+  .arSlider.no-transition {
     scroll-behavior: auto;
   }
+
   .engSlider .box,
   .arSlider .box {
     scroll-snap-align: start;
@@ -722,6 +755,7 @@ nav .container .shop-cart svg {
     height: 350px;
     background: var(--Tan);
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16), 3px 3px 6px rgba(0, 0, 0, 0.23);
+
     &:hover {
       transform: scale(1.05);
       transition: 0.3s;
@@ -743,6 +777,7 @@ nav .container .shop-cart svg {
     width: fit-content;
     margin: auto;
     text-align: center;
+
     & span svg {
       color: gold;
       font-size: 16px;
@@ -777,6 +812,7 @@ nav .container .shop-cart svg {
     margin: 0 auto;
     font-weight: bold;
     text-transform: capitalize;
+
     & span {
       padding-left: 10px;
     }
@@ -913,6 +949,7 @@ h3 {
 
     & svg {
       font-size: 24px;
+
       &:hover {
         transform: scale(1.2);
       }
@@ -1297,6 +1334,7 @@ h3 {
   background-color: var(--Beige);
   padding: var(--section-padding) 0;
 }
+
 .form-container {
   flex: 1;
   display: flex;
@@ -1558,6 +1596,10 @@ h3 {
           font-weight: 600;
           cursor: pointer;
 
+          &>span {
+            pointer-events: none
+          }
+
           &:hover,
           &.active {
             color: var(--Dark-petroleum);
@@ -1592,12 +1634,14 @@ h3 {
           &.active {
             display: block;
           }
+
           & h1 {
             font-weight: 700;
             margin-bottom: 20px;
           }
+
           & form {
-            
+
 
             & .flex-container {
               display: flex;
@@ -1662,7 +1706,7 @@ h3 {
                     border: 0;
                     border-radius: 8px;
                     background-color: var(--Dark-petroleum);
-                    
+
                     &:hover {
                       background-color: hsl(0, 65%, 32%);
                     }
@@ -1689,42 +1733,50 @@ h3 {
   .profile-screen .view-list {
     min-height: 900px;
   }
+
   .section.row .section-details {
     margin-bottom: 120px;
-    & .content-box .form-items>li:first-child{
+
+    & .content-box .form-items>li:first-child {
       flex-direction: column;
     }
   }
 
   .section-details .flex-container {
     flex-direction: column;
+
     & .form-items li:not(#email-li):first-child {
       width: 70%;
-  }
-  
+    }
+
   }
 }
 
-.profile-screen .content-box{
+.profile-screen .content-box {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: 0;
+
   & table {
     width: 100%;
-  & th {
-    text-align: left;
-    padding: .5rem;
 
-  }
-  & tbody > tr:nth-child(odd){
-    background-color: #f8e5e5;
-  }
-  & td {
-    padding: .5rem .7rem;
+    & th {
+      text-align: left;
+      padding: .5rem;
+
+    }
+
+    & tbody>tr:nth-child(odd) {
+      background-color: #f8e5e5;
+    }
+
+    & td {
+      padding: .5rem .7rem;
+    }
   }
 }
-}
+
 /* End ProfileScreen */
 
 
@@ -1734,6 +1786,7 @@ h3 {
   background-color: var(--Beige);
   padding: var(--section-padding) 0;
 }
+
 .form-box .shipping-form {
   width: 480px;
   padding: 30px 70px;
@@ -1759,9 +1812,11 @@ h3 {
         font-size: 50px;
         text-align: center;
       }
+
       &:last-child {
         margin: 50px auto 0;
       }
+
       & input {
         color: white;
         background-color: var(--Black-brown);
@@ -1776,29 +1831,31 @@ h3 {
         }
       }
 
-        & button.sub-btn {
-          position: relative;
-          font-size: 1.3rem;
-          background-color: var(--Black-brown);
-          color: white;
-          padding: 10px 0;
-          border: 0;
-          border-radius: 8px;
-          width: 50%;
-          margin: 0 auto;
-          & svg {
-            position: absolute;
-            right: 5%;
-            top: 50%;
-            transform: translateY(-40%);
-          }
-          &:hover {
-            background-color: rgb(89, 25, 25);
-          }
+      & button.sub-btn {
+        position: relative;
+        font-size: 1.3rem;
+        background-color: var(--Black-brown);
+        color: white;
+        padding: 10px 0;
+        border: 0;
+        border-radius: 8px;
+        width: 50%;
+        margin: 0 auto;
+
+        & svg {
+          position: absolute;
+          right: 5%;
+          top: 50%;
+          transform: translateY(-40%);
+        }
+
+        &:hover {
+          background-color: rgb(89, 25, 25);
         }
       }
     }
   }
+}
 
 @media (max-width: 767px) {
   .form-box .shipping-form {
@@ -1833,13 +1890,16 @@ h3 {
       margin: 30px;
       font-size: 1.2rem;
       font-weight: 600;
+
       &:first-child h1 {
         font-size: 50px;
         text-align: center;
       }
+
       &:last-child {
         margin: 100px auto 0;
       }
+
       & input {
         color: white;
         background-color: var(--Black-brown);
@@ -1853,32 +1913,36 @@ h3 {
           opacity: .4;
         }
       }
-        & label {
-          cursor: pointer;
+
+      & label {
+        cursor: pointer;
+      }
+
+      & button.sub-btn {
+        position: relative;
+        font-size: 1.3rem;
+        background-color: var(--Black-brown);
+        color: white;
+        padding: 10px 0;
+        border: 0;
+        border-radius: 8px;
+        width: 50%;
+        margin: 0 auto;
+
+        & svg {
+          position: absolute;
+          right: 5%;
+          top: 50%;
+          transform: translateY(-40%);
         }
-        & button.sub-btn {
-          position: relative;
-          font-size: 1.3rem;
-          background-color: var(--Black-brown);
-          color: white;
-          padding: 10px 0;
-          border: 0;
-          border-radius: 8px;
-          width: 50%;
-          margin: 0 auto;
-          & svg {
-            position: absolute;
-            right: 5%;
-            top: 50%;
-            transform: translateY(-40%);
-          }
-          &:hover {
-            background-color: rgb(89, 25, 25);
-          }
+
+        &:hover {
+          background-color: rgb(89, 25, 25);
         }
       }
     }
   }
+}
 
 @media (max-width: 767px) {
   .form-box .payment-form {
@@ -1886,6 +1950,7 @@ h3 {
     padding: 30px 30px;
   }
 }
+
 /* End PaymentScreen */
 
 /* Start CheckoutSteps */
@@ -1894,21 +1959,24 @@ h3 {
   justify-content: space-between;
   width: 70%;
   margin: 1rem auto;
+
   &>div {
     font-size: 1.4rem;
     font-weight: 700;
     text-align: center;
-    border-top: .3rem solid ;
+    border-top: .3rem solid;
     color: var(--Black-brown);
     opacity: .4;
     flex: 1 1;
     padding-top: 1rem;
   }
+
   & .active {
     color: rgb(186, 27, 27);
     opacity: 1;
   }
 }
+
 @media (max-width: 992px) {
   .checkout-steps {
     width: 95%;
@@ -1921,6 +1989,7 @@ h3 {
     font-size: 1rem;
   }
 }
+
 /* End CheckoutSteps */
 
 
@@ -1929,80 +1998,97 @@ h3 {
 .placeOrder-screen {
   background-color: var(--Beige);
   padding: var(--section-padding) 0;
+
   &>div {
     font-weight: 600;
     font-size: 1.2rem;
   }
+
   & .order {
     display: flex;
+
     & .order-info {
       flex: 3;
+
       & .section {
         background-color: rgb(210 161 161 / 21%);
         padding: 10px;
         margin: 10px;
         border: .1rem solid rgb(82, 20, 20);
         border-radius: 4px;
+
         & .cart-list-container>li:first-child {
           display: flex;
           justify-content: space-between;
           align-items: center;
         }
+
         & .cart-list-container>.details-holder {
           display: flex;
           justify-content: space-between;
           gap: 50px;
+
           & .img-specs-holder {
             display: flex;
+
             & .cart-image img {
               width: 135px;
               height: 180px;
             }
+
             & .cart-name {
               display: flex;
               flex-direction: column;
               justify-content: space-around;
               margin-left: 10px;
+
               & a {
                 color: var(--Black-brown);
                 text-decoration: none;
                 font-weight: 700;
+
                 &:hover {
                   color: var(--Dark-petroleum);
                 }
               }
             }
           }
-          
+
         }
       }
+
       & ul {
         list-style: none;
         padding: 0;
       }
     }
+
     & .order-action {
       background-color: rgb(210 161 161 / 21%);
       border: .1rem solid rgb(82, 20, 20);
       border-radius: 4px;
       padding: 10px;
       margin: 10px;
+
       ul {
         list-style: none;
         padding: 0 20px;
+
         & li {
           display: flex;
           justify-content: space-between;
           margin-bottom: 4px;
-          
+
           &.order-total {
             color: rgb(188, 43, 43);
             margin-top: 25px;
+
             &>div {
               font-size: 1.3rem;
               font-weight: 700;
             }
           }
+
           & .placeOrder-btn {
             width: 100%;
             margin-top: 30px;
@@ -2026,6 +2112,7 @@ h3 {
     flex-direction: column;
   }
 }
+
 /* End PlaceOrderScreen */
 
 

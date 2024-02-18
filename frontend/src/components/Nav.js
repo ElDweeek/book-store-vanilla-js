@@ -7,19 +7,19 @@ const Nav = {
 
     const activePage = window.location.hash.slice(2); // Remove the '#' from activePage
     const navLinks = document.querySelectorAll('.navbar-nav a');
-    
+
     navLinks.forEach(link => {
-        const linkHash = link.getAttribute('href').split('/').pop();
-        // Check if the last part of the link's href matches the active page
-        if (linkHash === activePage) {
-            link.classList.add('active');
-        }
+      const linkHash = link.getAttribute('href').split('/').pop();
+      // Check if the last part of the link's href matches the active page
+      if (linkHash === activePage) {
+        link.classList.add('active');
+      }
     });
-    
-    
-    
-    
-    
+
+
+
+
+
 
 
 
@@ -27,12 +27,14 @@ const Nav = {
 
     const searchArea = document.querySelector(".searchArea");
     const searchNav = document.querySelector(".search-icon-div");
-    const searchImageNav = document.querySelector(".search-img")
-    
+
     document.addEventListener("click", function (e) {
-      if (e.target === searchImageNav || e.target === searchArea)
-        searchNav.classList.add("active")
-      else searchNav.classList.remove("active")
+      if (e.target === searchNav || e.target === searchArea) {
+        searchNav.classList.add("active");
+      }
+      else {
+        searchNav.classList.remove("active");
+      }
     });
 
 
@@ -91,8 +93,10 @@ const Nav = {
             <a class="nav-link m-1 p-2 p-lg-3 " aria-current="page" href="/#/contact">Contact</a>
           </li>
         </ul>
-        <div class="search-icon-div ps-3 pe-3 d-none d-lg-block">
-          <img src="../../imgs/search.png" alt="search.." class="search-img"/>
+        <div class="search-icon-div  me-2 ps-2  d-none d-lg-block">
+          <span>
+            <i class="fa-brands fa-searchengin"></i>
+          </span>
           <input class="searchArea" type="text" id="desk-search" placeholder="Author / Book" autofocus>
         </div>
   
@@ -118,10 +122,10 @@ const Nav = {
         </div>
         `
         : `<a class="btn main-btn ps-4 pe-4" href="#/signin">Login</a>`
-        }
-        ${isAdmin ? 
-          `<div class="dashboard-link"><a href="/#/dashboard">Dashboard</a></div>` : ''
-        }
+      }
+        ${isAdmin ?
+        `<div class="dashboard-link"><a href="/#/dashboard">Dashboard</a></div>` : ''
+      }
 
       </div>
       <div class="shop-cart">
@@ -130,7 +134,7 @@ const Nav = {
         <a href="/#/cart"><i class="fa-solid fa-cart-shopping"></i></a>`
         :
         `<i class="fa-solid fa-cart-shopping"></i>`
-        }
+      }
       </div>
     </div>
   </nav>
