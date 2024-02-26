@@ -116,17 +116,21 @@ const HomeScreen = {
         (engProducts) => `
       <li>
       <div class="box">
-            <a href="/#/info/${engProducts._id}" draggable="false">
+            <div class="box-img">
+      <a href="/#/info/${engProducts._id}" draggable="false">
               <img src="${engProducts.image}" alt="${engProducts.name}" draggable="false">
             </a>
-            <a href="/#/info/${engProducts._id}" draggable="false">
-              <h5>${engProducts.name}</h5>
-            </a>
-            <div class="book-rating">
-            <span>${Rating.render({ value: engProducts.rating })}</span>
-            <span>${engProducts.numReview + " reviews"}</span>
             </div>
-            <p>Price:<span>$ ${engProducts.price}</span> </p>
+            <div class="box-content">
+              <a href="/#/info/${engProducts._id}" draggable="false">
+                <h5>${engProducts.name}</h5>
+              </a>
+              <div class="book-rating">
+                <span>${Rating.render({ value: engProducts.rating })}</span>
+                <span>${engProducts.numReview + " reviews"}</span>
+              </div>
+                <p>Price:<span>$ ${engProducts.price}</span> </p>
+            </div>
           </div>
       </li>
       `).join('\n')}
@@ -147,17 +151,21 @@ const HomeScreen = {
           (arProducts) => `
       <li>
       <div class="box">
-            <a href="/#/info/${arProducts._id}" draggable="false">
-              <img src="${arProducts.image}" alt="${arProducts.name}" draggable="false">
-            </a>
-            <a href="/#/info/${arProducts._id}" draggable="false">
-              <h5>${arProducts.name}</h5>
-            </a>
-            <div class="book-rating">
-            <span>${Rating.render({ value: arProducts.rating})}</span>
-            <span>${arProducts.numReview + " reviews"}</span>
+            <div class="box-img">
+              <a href="/#/info/${arProducts._id}" draggable="false">
+                <img src="${arProducts.image}" alt="${arProducts.name}" draggable="false">
+              </a>
             </div>
-            <p>Price:<span>$ ${arProducts.price}</span> </p>
+            <div class="img-content">
+              <a href="/#/info/${arProducts._id}" draggable="false">
+                <h5>${arProducts.name}</h5>
+              </a>
+              <div class="book-rating">
+              <span>${Rating.render({ value: arProducts.rating})}</span>
+              <span>${arProducts.numReview + " reviews"}</span>
+            </div>
+              <p>Price:<span>$ ${arProducts.price}</span> </p>
+            </div>
           </div>
       </li>
       `).join('\n')}
